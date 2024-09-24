@@ -10,8 +10,8 @@ function App() {
     <KindeProvider
       clientId="b18d40e7618a4648a8d0e9cf2f4f7ffb"
       domain="https://notionclone.kinde.com"
-      redirectUri="https://notion-clone-frontend-5ho90usw5-nileshs-projects-60e7ec4b.vercel.app/some"
-      logoutUri="https://notion-clone-frontend-5ho90usw5-nileshs-projects-60e7ec4b.vercel.app/"
+      redirectUri="https://notion-clone-ch7eye3h0-nileshs-projects-60e7ec4b.vercel.app/some"
+      logoutUri="https://notion-clone-ch7eye3h0-nileshs-projects-60e7ec4b.vercel.app/"
     >
       <AppRoutes />
     </KindeProvider>
