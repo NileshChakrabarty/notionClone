@@ -1,13 +1,13 @@
 
 
 import React, { useState } from 'react';
-import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+// import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const SignupForm = ({ darkMode, onSignup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login, register } = useKindeAuth();
+  // const { login, register } = useKindeAuth();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ const SignupForm = ({ darkMode, onSignup }) => {
     // Check if the user already exists in local storage
     const existingUser = localStorage.getItem(username);
     if (existingUser) {
-      setError('Account exists! Redirecting to login...');
+      setError('');
       setTimeout(() => {
         onSignup(); // Redirect to the login form
       }, 2000); // Redirect after 2 seconds
@@ -69,30 +69,11 @@ const SignupForm = ({ darkMode, onSignup }) => {
       >
         Sign Up
       </button>
-
-      {/* Kinde Authentication Buttons */}
-      <div className="flex space-x-4 mt-4">
-        <button
-          type="button"
-          onClick={register}
-          className={`w-full py-2 px-4 rounded-md ${
-            darkMode ? 'bg-blue-500 text-white' : 'bg-blue-700 text-white'
-          }`}
-        >
-          Register with Kinde
-        </button>
-        <button
-          type="button"
-          onClick={login}
-          className={`w-full py-2 px-4 rounded-md ${
-            darkMode ? 'bg-green-500 text-white' : 'bg-green-700 text-white'
-          }`}
-        >
-          Log In with Kinde
-        </button>
-      </div>
     </form>
   );
 };
 
 export default SignupForm;
+
+
+
