@@ -261,7 +261,7 @@ export default function Some() {
 
       {/* Editor Area */}
 
-      <div className={`flex-1 p-6 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-6' : 'ml-0 lg:ml-60'}`}>
+      <div className={`flex-1 p-6 transition-all duration-300 ease-in-out ${isSidebarOpen ? '' : 'ml-0 lg:ml-60'}`}>
   {selectedNoteIndex !== null ? (
     <RichTextEditor
       initialContent={noteContent}
