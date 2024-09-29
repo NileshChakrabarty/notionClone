@@ -1,10 +1,12 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from '../assets/image1.png';
 import LoginForm from './LoginForm'; 
 import SignupForm from './SignupForm'; 
 import Some from './some';
-
+import Navbar from './navbar';
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,43 +60,14 @@ const Home = () => {
         darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'
       }`}
     >
-      <header className="w-full flex justify-between items-center px-6 md:px-10 py-5">
-        <div className="text-xl md:text-2xl font-bold">YourNote</div>
-        <div className="flex gap-2 md:gap-4 items-center">
-          {isLoggedIn ? (
-            <button
-              className="bg-white text-black dark:bg-black dark:text-white px-3 md:px-4 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-300"
-              onClick={handleLogout}
-            >
-              Log out
-            </button>
-          ) : (
-            <>
-              <button
-                className="bg-white text-black dark:bg-black dark:text-white px-3 md:px-4 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-300"
-                onClick={() => openModal('signup')}
-              >
-                Sign Up
-              </button>
-            </>
-          )}
-          <button
-            onClick={toggleDarkMode}
-            className="p-2 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition duration-300"
-            aria-label="Toggle Dark Mode"
-          >
-            {darkMode ? (
-              <span role="img" aria-label="Sun">
-                🌞
-              </span>
-            ) : (
-              <span role="img" aria-label="Moon">
-                🌙
-              </span>
-            )}
-          </button>
-        </div>
-      </header>
+      {/* Pass state handlers and values as props to Navbar */}
+      <Navbar
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        isLoggedIn={isLoggedIn}
+        handleLogout={handleLogout}
+        openModal={openModal}
+      />
 
       <main className="flex flex-col items-center justify-center flex-1 text-center px-4">
         <div className="flex justify-center mb-6">
@@ -156,12 +129,4 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-
-
-
 

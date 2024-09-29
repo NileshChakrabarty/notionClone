@@ -1,5 +1,6 @@
 
 
+
 import React, { useState } from 'react';
 // import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
@@ -74,6 +75,3 @@ const SignupForm = ({ darkMode, onSignup }) => {
 };
 
 export default SignupForm;
-
-
-
