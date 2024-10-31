@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RichTextEditor from './RichTextEditor';
 import { FaPlus, FaEllipsisH, FaBars } from 'react-icons/fa';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import SignupForm from './SignupForm'; // Import your SignupForm component
 import LoginForm from './LoginForm'; // Import your LoginForm component
 const getInitials = (firstName, lastName) => {
