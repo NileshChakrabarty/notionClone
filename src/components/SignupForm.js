@@ -20,7 +20,7 @@ const SignupForm = ({ handleSignup, closeModal, darkMode }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://notion-clone-srever.vercel.app/api/signup', {
+      const response = await fetch('https://notion-clone-srever.vercel.app/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
